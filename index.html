@@ -736,6 +736,9 @@
 
             myTurn = false;
             
+            // 1 second delay i added so the turn thing doesnt get fucked
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
             try {
                 await updateDoc(getGameRef(currentGameId), {
                     turn: nextTurn,
